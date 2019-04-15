@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ScooterFinder</string>
+    <string name="refresh">refresh</string>
+    <string name="no_data">Oops. There seems some problem.</string>
+    <string name="data_updated">Request completed.</string>
+    <string name="blank">""</string>
+</resources>

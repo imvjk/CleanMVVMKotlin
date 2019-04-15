@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4EAED1</color>
+    <color name="colorPrimaryDark">#4193B1</color>
+    <color name="colorAccent">#4EAED1</color>
+    <color name="colorSecondary">#4EAED1</color>
+    <color name="colorTextPrimary">#FFFFFF</color>
+    <color name="colorTextSecondary">#C8EBF4</color>
+    <color name="translucentBackground">#FFFFFF</color>
+    <color name="colorRecylerViewBackground">#F5F5F5</color>
+    <color name="colorDivider">#D7D7D7</color>
+    <color name="option_text_color">#393541</color>
+</resources>

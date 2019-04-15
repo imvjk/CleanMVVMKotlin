@@ -1,0 +1,50 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+  <include layout="@layout/toolbar"/>
+
+  <FrameLayout
+      android:id="@+id/fragmentContainer"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_below="@+id/appbar"
+      app:layout_behavior="@string/appbar_scrolling_view_behavior"
+      />
+
+    <LinearLayout
+        android:id="@+id/dashboardView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/dashboard_panel_bg"
+        app:behavior_hideable="false"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:behavior_peekHeight="80dp"
+        app:layout_behavior="@string/bottom_sheet_behavior" >
+
+        <TextView
+            android:id="@+id/dashboardViewText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:padding="@dimen/heading_size"
+            android:layout_gravity="center"
+            android:gravity="center"
+            />
+
+      <TextView
+          android:id="@+id/dashboardViewBody"
+          android:layout_width="match_parent"
+          style="@style/TextAppearance.AppCompat.Body1"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/heading_size"
+          android:layout_gravity="center"
+          android:gravity="center"
+          />
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
