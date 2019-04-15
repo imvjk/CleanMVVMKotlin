@@ -3,20 +3,19 @@ package com.example.data.source.remote
 import com.example.core.functional.Result
 import com.example.core.interactor.productToModel
 import com.example.data.model.ProductModel
-import com.example.util.AppExecutors
-import com.example.util.DoubleArgSingleton
+import com.example.util.SingleArgSingleton
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 /**
  * Implementation of the data source that interact with server.
  */
-class RemoteDataSource(private val appExecutors: AppExecutors,
-                       private val apiService: ApiService) : com.example.data.IDataSource.IRemoteDataSource {
+class RemoteDataSource(private val apiService: ApiService) : com.example.data.IDataSource.IRemoteDataSource {
 
     // singleton
-    companion object : DoubleArgSingleton<RemoteDataSource, AppExecutors, ApiService>(::RemoteDataSource)
+    companion object : SingleArgSingleton<RemoteDataSource, ApiService>(::RemoteDataSource)
 
-    override suspend fun getProductsFromRemote(): Result<List<ProductModel>> = withContext(appExecutors.networkContext) {
+    override suspend fun getProductsFromRemote(): Result<List<ProductModel>> = withContext(Dispatchers.IO) {
         val call = apiService.getProduct()
         try {
             with(call.execute()) {

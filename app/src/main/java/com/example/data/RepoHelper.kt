@@ -2,7 +2,6 @@ package com.example.data
 
 import com.example.data.source.remote.ApiService
 import com.example.data.source.remote.RemoteDataSource
-import com.example.util.AppExecutors
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -21,7 +20,6 @@ object RepoHelper {
                 .build()
 
         val apiService = retrofit.create(ApiService::class.java)
-        val appExecutors = AppExecutors()
-        return Repository.getInstance(RemoteDataSource.getInstance(appExecutors, apiService))
+        return Repository.getInstance(RemoteDataSource.getInstance(apiService))
     }
 }
